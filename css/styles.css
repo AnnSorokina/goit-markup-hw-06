@@ -655,7 +655,8 @@ textarea {
 }
 
 .form-field:focus-within > .form-input {
-  outline-color: var(--accent-color);
+  outline: none;
+  border-color: var(--accent-color);
 }
 
 .form-label {
@@ -682,15 +683,14 @@ textarea {
   height: 120px;
 }
 
-.modal input[type="checkbox"] {
-  margin-right: 8px;
+.label {
   margin-bottom: 30px;
 }
 
-.form-input:focus + .form-label,
+.form-field:focus-within > .form-label,
 .form-input:not(:placeholder-shown) + .form-label {
   color: var(--accent-color);
-  transform: translate(-26px, -33px);
+  transform: translate(-26px, -40px);
 }
 
 /* textarea:focus + .form-label {
