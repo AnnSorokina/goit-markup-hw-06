@@ -638,17 +638,13 @@ h1 {
   margin-bottom: 28px;
 }
 
-.form-field:hover > .form-label {
+/* .form-field:hover > .form-label {
   color: var(--accent-color);
-}
+} */
 
-.form-field:hover > .form-input {
+/* .form-field:hover > .form-input {
   border-color: var(--accent-color);
-}
-
-.form-field:focus > .form-input {
-  outline-color: var(--accent-color);
-}
+} */
 
 .form-field input,
 textarea {
@@ -656,6 +652,10 @@ textarea {
   padding: 11px 16px 11px 42px;
   border-radius: 4px;
   border: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.form-field:focus-within > .form-input {
+  outline-color: var(--accent-color);
 }
 
 .form-label {
@@ -667,7 +667,8 @@ textarea {
   color: var(--ordinary-text-color);
   letter-spacing: 0.01em;
 
-  transition: transform var(--tr-duration) var(--timing-fn);
+  transition: transform var(--tr-duration) var(--timing-fn),
+    color var(--tr-duration) var(--timing-fn);
 }
 
 textarea + .form-label {
@@ -722,10 +723,10 @@ textarea {
   /* width: 18px;
   height: 18px; */
   fill: var(--primary-text-color);
+  transition: fill var(--tr-duration) var(--timing-fn);
 }
 
-.form-field:hover .form-icon,
-.form-field:focus .form-icon {
+.form-field:focus-within .form-icon {
   fill: var(--accent-color);
 }
 
