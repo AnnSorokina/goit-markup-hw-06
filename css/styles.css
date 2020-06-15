@@ -241,6 +241,7 @@ h1 {
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
+  cursor: pointer;
 }
 
 /* Work */
@@ -926,7 +927,7 @@ address {
   line-height: 1.25;
 }
 
-.subscr-input:focus-within > span,
+.email:focus + span,
 .email:not(:placeholder-shown) + span {
   transform: translateY(150%);
 }
