@@ -646,20 +646,22 @@ h1 {
   border-color: var(--accent-color);
 } */
 
-.form-field input,
-textarea {
+.form-input,
+.form-textarea {
   margin: 0;
   padding: 11px 16px 11px 42px;
   border-radius: 4px;
   border: 1px solid rgba(33, 33, 33, 0.2);
 }
 
-.form-field:focus-within > .form-input {
+.form-field:focus-within > .form-input,
+.form-field:focus-within > .form-textarea {
   outline: none;
   border-color: var(--accent-color);
 }
 
-.form-label {
+.form-label,
+.form-label-textarea {
   position: absolute;
   top: 50%;
   left: 42px;
@@ -672,19 +674,15 @@ textarea {
     color var(--tr-duration) var(--timing-fn);
 }
 
-textarea + .form-label {
-  position: absolute;
-  top: 12px;
-  left: 16px;
-}
-
-textarea {
+.form-textarea {
   resize: none;
   height: 120px;
 }
 
-.label {
-  margin-bottom: 30px;
+.form-textarea + .form-label-textarea {
+  position: absolute;
+  top: 12px;
+  left: 16px;
 }
 
 .form-field:focus-within > .form-label,
@@ -693,9 +691,19 @@ textarea {
   transform: translate(-26px, -40px);
 }
 
+.form-field:focus-within > .form-label-textarea,
+.form-input:not(:placeholder-shown) + .form-label-textarea {
+  color: var(--accent-color);
+  transform: translateY(-33px);
+}
+
 /* textarea:focus + .form-label {
   transform: translate(0 -28px);
 } */
+
+.label {
+  margin-bottom: 30px;
+}
 
 .form-label-policy {
   color: var(--ordinary-text-color);
@@ -903,11 +911,6 @@ address {
   transition: transform var(--tr-duration) var(--timing-fn);
 }
 
-.subscr-input:focus-within > span,
-.email:not(:placeholder-shown) + span {
-  transform: translateY(150%);
-}
-
 .email {
   width: 358px;
   height: 50px;
@@ -921,6 +924,11 @@ address {
 
   font-size: 16px;
   line-height: 1.25;
+}
+
+.subscr-input:focus-within > span,
+.email:not(:placeholder-shown) + span {
+  transform: translateY(150%);
 }
 
 .mail-button {
