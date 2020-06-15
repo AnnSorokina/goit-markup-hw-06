@@ -898,20 +898,6 @@ address {
   position: relative;
 }
 
-.subscr-input span {
-  position: absolute;
-  top: 50%;
-  left: 16px;
-  transform: translateY(-50%);
-
-  color: var(--footer-text-color);
-
-  font-size: 16px;
-  line-height: 1.25;
-
-  transition: transform var(--tr-duration) var(--timing-fn);
-}
-
 .email {
   width: 358px;
   height: 50px;
@@ -927,9 +913,23 @@ address {
   line-height: 1.25;
 }
 
+.email-label {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+
+  color: var(--footer-text-color);
+
+  font-size: 16px;
+  line-height: 1.25;
+
+  transition: transform var(--tr-duration) var(--timing-fn);
+}
+
 .email:focus + span,
 .email:not(:placeholder-shown) + span {
-  transform: translateY(150%);
+  transform: translateY(-250%) scale(0.85);
 }
 
 .mail-button {
