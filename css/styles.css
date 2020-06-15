@@ -790,7 +790,7 @@ textarea {
 .social-links ul,
 .social-links li,
 .subscription,
-.subscription li {
+.subscr-input {
   display: inline-flex;
 }
 
@@ -881,8 +881,31 @@ address {
   margin-right: auto;
 }
 
-.subscription > li:first-child {
+.subscription > b {
   margin-bottom: 21px;
+}
+
+.subscr-input {
+  position: relative;
+}
+
+.subscr-input span {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+
+  color: var(--footer-text-color);
+
+  font-size: 16px;
+  line-height: 1.25;
+
+  transition: transform var(--tr-duration) var(--timing-fn);
+}
+
+.subscr-input:focus-within > span,
+.email:not(:placeholder-shown) + span {
+  transform: translateY(150%);
 }
 
 .email {
@@ -894,7 +917,7 @@ address {
   border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   background-color: var(--background-footer-color);
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--footer-text-color);
 
   font-size: 16px;
   line-height: 1.25;
